@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import productsData from "./products";
 import Navbar from "./navbar";
 import DisplayProducts from "./displayProducts";
-import Cart from "./Cart"; // You’ll create this next
+import Cart from "./Cart";
+import SignIn from "./SignIn";
+import Checkout from "./Checkout";
 
 class App extends Component {
   state = {
@@ -41,6 +43,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <Navbar total={total} />
+
           <Routes>
             <Route
               path="/"
@@ -59,9 +62,20 @@ class App extends Component {
                 </>
               }
             />
+
             <Route
               path="/cart"
               element={<Cart items={cartItems} />}
+            />
+
+            <Route
+              path="/signin"
+              element={<SignIn />}
+            />
+
+            <Route
+              path="/checkout"
+              element={<Checkout />}
             />
           </Routes>
         </div>
